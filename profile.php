@@ -1,7 +1,7 @@
 <html>
 <head>
 
-</head>
+
 <style>
 input[type=text], input[type=password] {
     width: 100%;
@@ -11,16 +11,19 @@ input[type=text], input[type=password] {
     border: 1px #ccc;
     box-sizing: border-box;
 }
-table{
-	background-color: white;
+.d1{
+	text-align: right;
+	width: 45%;
 }
-td{
-	text-align: center;
+table
+{
+	border-collapse: collapse;
+    border: 1.5px solid #ef7000;
+    width:45%;
+    padding: 10px 28px;
 }
-
 </style>
-<link rel="stylesheet" href="style4.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 <body>
 	<div align="center">
     <h2>Profile</h2>
@@ -32,39 +35,17 @@ td{
 	</form>
 	<table>
 		<tr>
-			<td>Employee name</td>
+			<td class="d1">Employee name</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>Position</td>
+			<td class="d1">Position</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>Attendance</td>
+			<td class="d1">Attendance</td>
 			<td>90%</td>
 		</tr>
-		<tr>
-			<td>Score</td>
-			<td>78 points</td>
-		</tr> 
-		<tr>
-			<td style="text-align: center;">Progress</td>
-			
-				<?php
-				$user='root';
-				$pass='';
-				$dbname='mydb';
-				$conn= new mysqli('localhost',$user,$pass,$dbname) or die("unable to connect");
-				$sql = "SELECT p_status FROM project";
-				$result = $conn->query($sql);
-  				if ($result->num_rows > 0)
-  					{
-  	 					while($row = $result->fetch_assoc())
-  	 					 {
-        					echo  "<td>" . $row["p_status"]. "</td>";
-        				}
-    				}
-    			?>
 
 			
 		</tr>
